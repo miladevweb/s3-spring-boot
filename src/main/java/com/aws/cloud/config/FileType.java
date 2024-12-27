@@ -1,4 +1,4 @@
-package com.aws.cloud.enum;
+package com.aws.cloud.config;
 
 import java.util.Arrays;
 
