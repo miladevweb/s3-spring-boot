@@ -1,0 +1,11 @@
+spring.port=YOUR_CUSTOM_PORT
+spring.application.name=YOUR_APP_NAME
+
+cloud.aws.credentials.accessKey=AWS_ACCESS_KEY
+cloud.aws.credentials.secretKey=AWS_SECRET_KEY
+cloud.aws.region.static=AWS_REGION
+cloud.aws.s3.bucket=AWS_S3_BUCKET_NAME
+
+spring.servlet.multipart.enabled=true
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB
