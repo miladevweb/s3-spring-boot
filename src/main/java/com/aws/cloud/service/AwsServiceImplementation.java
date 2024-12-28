@@ -1,7 +1,7 @@
 package com.aws.cloud.service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
@@ -16,8 +16,8 @@ import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import lombok.RequiredArgsConstructor;
 
 @Slf4j
 @Service
@@ -32,9 +32,12 @@ public class AwsServiceImplementation implements AwsService {
         metadata.setContentLength(contentLength);
         metadata.setContentType(contentType);
 
+        keyName = "spring-boot-aws-s3/" + keyName;
+
         s3Client.putObject(bucketName, keyName, value, metadata);
         log.info("File uploaded successfully to S3");
 
+        // Store the URL of the uploaded file in the database
         log.info(s3Client.getUrl(bucketName, keyName).toString());
     }
 
