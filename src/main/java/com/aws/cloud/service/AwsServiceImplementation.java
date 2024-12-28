@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @RequiredArgsConstructor
 public class AwsServiceImplementation implements AwsService {
-    private AmazonS3 s3Client;
+    private final AmazonS3 s3Client;
 
     @Override
     public void uploadFile(String bucketName, String keyName, Long contentLength, String contentType, InputStream value)
@@ -34,6 +34,8 @@ public class AwsServiceImplementation implements AwsService {
 
         s3Client.putObject(bucketName, keyName, value, metadata);
         log.info("File uploaded successfully to S3");
+
+        log.info(s3Client.getUrl(bucketName, keyName).toString());
     }
 
     @Override
