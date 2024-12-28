@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import lombok.Getter;
 import lombok.AllArgsConstructor;
 
-@Getter
+@Getter // getter for extension and mediaType
 @AllArgsConstructor(access = lombok.AccessLevel.PACKAGE)
 public enum FileType {
     /* values() */
