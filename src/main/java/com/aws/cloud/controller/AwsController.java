@@ -13,7 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.aws.cloud.config.FileType;
 import com.aws.cloud.service.AwsService;
 
-import lombok.val;
 import lombok.SneakyThrows;
 import lombok.RequiredArgsConstructor;
 
@@ -21,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/aws")
 @RequiredArgsConstructor
 public class AwsController {
-    private AwsService awsService;
+    private final AwsService awsService;
 
     @GetMapping("/{bucketName}")
     public ResponseEntity<?> listFiles(@PathVariable("bucketName") String bucketName) {
@@ -53,7 +52,7 @@ public class AwsController {
     public ResponseEntity<?> downloadFile(
             @PathVariable("bucketName") String bucketName,
             @PathVariable("fileName") String fileName) {
-        val body = awsService.downloadFile(bucketName, fileName);
+        var body = awsService.downloadFile(bucketName, fileName);
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileName + "\"")
