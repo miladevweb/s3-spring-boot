@@ -68,7 +68,7 @@ spring.servlet.multipart.max-file-size=10MB
 spring.servlet.multipart.max-request-size=10MB
 ```
 
-Create a bean for the AmazonS3 client and inject it into our service.
+Create a bean for the AmazonS3 client and inject it into our [**_service_**](#-service).
 
 ```java
 @Configuration
@@ -94,7 +94,7 @@ public class AwsConfig {
 }
 ```
 
-### **_<div id="service">📌 Service</div>_**
+### **_📌 Service_**
 
 Create a service that uses the AmazonS3 client to store and retrieve files.
 
@@ -177,7 +177,7 @@ public class AwsServiceImplementation implements AwsService {
 
 ### **_📌 Controller_**
 
-Create a controller that handles the requests to the [**_service_**](#service).
+Create a controller that handles the requests to the [**_service_**](#-service).
 
 ```java
 @Controller
