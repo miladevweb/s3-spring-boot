@@ -175,7 +175,7 @@ public class AwsServiceImplementation implements AwsService {
 }
 ```
 
-### **_<div id="controller">📌 Controller</div>_**
+### **_📌 Controller_**
 
 Create a controller that handles the requests to the [**_service_**](#service).
 
@@ -234,4 +234,4 @@ public class AwsController {
 }
 ```
 
-With the above code, you can upload, download, list and delete fiels from the S3 bucket.
+With the above [**_controller_**](#-controller), you can upload, download, list and delete fiels from the S3 bucket.
